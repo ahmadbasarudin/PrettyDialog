@@ -1,4 +1,4 @@
-package libs.basar.prettydialog;
+package libs.basar.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
@@ -8,9 +8,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import libs.basar.prettydialog.PrettyDialog;
+import libs.basar.prettydialog.PrettyDialogCallback;
+
 public class MainActivity extends AppCompatActivity {
 
-    AppCompatButton btn_titleMessage, btn_okCancel, btn_allCustom;
+    AppCompatButton btn_simple,btn_titleMessage, btn_okCancel, btn_allCustom;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,14 +22,31 @@ public class MainActivity extends AppCompatActivity {
         btn_titleMessage = (AppCompatButton) findViewById(R.id.btn_titleMessage);
         btn_okCancel = (AppCompatButton) findViewById(R.id.btn_okCancel);
         btn_allCustom = (AppCompatButton) findViewById(R.id.btn_allCustom);
+        btn_simple = findViewById(R.id.btn_simple);
 
         setup();
     }
 
-    private void setup(){
+    private void setup() {
+        setup_simple();
         setup_titleMessageDialog();
         setup_okCancelDialog();
         setup_allCustomDialog();
+    }
+
+    private void setup_simple()
+    {
+        final PrettyDialog dialog = new PrettyDialog(this)
+                .setTitle("PrettyDialog Title")
+                .setMessage("PrettyDialog Message")
+                .setSound(R.raw.error);
+        btn_simple.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.showDialog();
+            }
+        });
+
     }
 
     private void setup_titleMessageDialog(){
@@ -87,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                dialog.show();
+                dialog.showDialog();
             }
         });
     }
@@ -115,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
         btn_okCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dialog.show();
+                dialog.showDialog();
             }
         });
     }
@@ -167,7 +187,7 @@ public class MainActivity extends AppCompatActivity {
         btn_allCustom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dialog.show();
+                dialog.showDialog();
             }
         });
     }

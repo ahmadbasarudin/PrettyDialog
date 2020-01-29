@@ -1,4 +1,4 @@
-package libs.basar.prettydialog;
+package libs.basar.myapplication;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("libs.basar.prettydialog", appContext.getPackageName());
+        assertEquals("libs.basar.myapplication", appContext.getPackageName());
     }
 }

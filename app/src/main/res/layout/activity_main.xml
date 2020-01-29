@@ -4,15 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
+    <Button
+        android:id="@+id/btn_simple"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/pdlg_color_blue"
+        android:text="Simple"
+
+        android:textAllCaps="false"
+        />
     <Button
         android:id="@+id/btn_titleMessage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/pdlg_color_blue"
         android:text="Simple Title/Message"
+
         android:textAllCaps="false"
         />
+
     <Button
         android:id="@+id/btn_okCancel"
         android:layout_width="match_parent"
@@ -31,4 +43,5 @@
         android:text="All Custom"
         android:textAllCaps="false"
         />
+
 </LinearLayout>

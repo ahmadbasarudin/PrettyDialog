@@ -126,6 +126,31 @@ public class PrettyDialog extends AppCompatDialog {
         tv_message.setVisibility(View.GONE);
     }
 
+    public   PrettyDialog showDialog()
+    {
+        if(sound_res != 0)
+        {
+            MediaPlayer mp = MediaPlayer.create(getContext(), sound_res);
+            try
+            {
+                if (mp.isPlaying())
+                {
+                    mp.stop();
+                    mp.release();
+                    mp = MediaPlayer.create(getContext(), sound_res);
+                }
+
+                mp.start();
+            }
+            catch (Exception e)
+            {
+                e.printStackTrace();
+            }
+        }
+        this.show();
+        return this;
+    }
+
     public PrettyDialog setGravity(int gravity){
         getWindow().setGravity(gravity);
         return this;
@@ -153,23 +178,9 @@ public class PrettyDialog extends AppCompatDialog {
     }
     public  PrettyDialog setSound(int _sound_res)
     {
+        sound_res = _sound_res;
 
-        MediaPlayer mp = MediaPlayer.create(getContext(), _sound_res);
-        try
-        {
-            if (mp.isPlaying())
-            {
-                mp.stop();
-                mp.release();
-                mp = MediaPlayer.create(getContext(), _sound_res);
-            }
 
-            mp.start();
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
         return this;
 
     }

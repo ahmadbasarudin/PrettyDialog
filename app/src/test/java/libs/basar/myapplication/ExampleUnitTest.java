@@ -1,4 +1,4 @@
-package libs.basar.prettydialog;
+package libs.basar.myapplication;
 
 import org.junit.Test;
 
