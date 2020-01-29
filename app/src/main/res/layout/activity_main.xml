@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <Button
+        android:id="@+id/btn_titleMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/pdlg_color_blue"
+        android:text="Simple Title/Message"
+        android:textAllCaps="false"
+        />
+    <Button
+        android:id="@+id/btn_okCancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="OK/Cancel Dialog"
+        android:textColor="@color/pdlg_color_white"
+        android:background="@color/pdlg_color_red"
+        android:textAllCaps="false"
+        />
+    <Button
+        android:id="@+id/btn_allCustom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/pdlg_color_green"
+        android:textColor="@color/pdlg_color_white"
+        android:text="All Custom"
+        android:textAllCaps="false"
+        />
+</LinearLayout>
