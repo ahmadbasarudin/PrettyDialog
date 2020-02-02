@@ -23,7 +23,6 @@ dependencies {
 
 Penggunaan di level logic
 
-1. sederhana
 
 ```
 new PrettyDialog(this)
@@ -32,6 +31,10 @@ new PrettyDialog(this)
 	.showDialog();
 ```
 
+### Mengganti Suara:
+```
+.setSound(R.raw.error)
+```
 
 ### Mengganti Icon:
 ```
@@ -67,7 +70,7 @@ new PrettyDialog(this)
 	})
 ```
 
-### Menambah Buttons:
+### Menambah Button:
 - anda dapat menambahkan button tak terbatas kedalam dialog: 
 
 ```
@@ -105,4 +108,62 @@ new PrettyDialog(this)
 		R.color.pdlg_color_gray,
 		null
 	);
+```
+
+### Contoh Penerapan:
+
+```
+new PrettyDialog(this)
+                .setIcon(
+                        R.drawable.pdlg_icon_info,    // Icon resource
+                        R.color.pdlg_color_green,      // Icon tint
+                        new PrettyDialogCallback() {  // Icon OnClick listener
+                            @Override
+                            public void onClick() {
+                                // Do what you gotta do
+                            }
+                        })
+                .setTitle("PrettyDialog Title")
+                .setMessage("PrettyDialog Message")
+                .addButton(
+                        "OK",
+                        R.color.pdlg_color_white,
+                        R.color.pdlg_color_green,
+                        new PrettyDialogCallback() {
+                            @Override
+                            public void onClick() {
+                                // Do what you gotta do
+                            }
+                        }
+                )
+                .addButton(
+                        "Cancel",
+                        R.color.pdlg_color_white,
+                        R.color.pdlg_color_red,
+                        new PrettyDialogCallback() {
+                            @Override
+                            public void onClick() {
+                                // Dismiss
+                            }
+                        }
+                )
+                .addButton(
+                        "Option 3",
+                        R.color.pdlg_color_black,
+                        R.color.pdlg_color_gray,
+                        new PrettyDialogCallback() {
+                            @Override
+                            public void onClick() {
+                                Toast.makeText(MainActivity.this, "I Do Nothing :)", Toast.LENGTH_SHORT).show();
+
+                            }
+                        }
+                )
+                .setSound(R.raw.ringtone)
+                .setTitle("Do you agree?")
+                .setTitleColor(R.color.pdlg_color_blue)
+                .setAnimationEnabled(true)
+                .setMessage("By agreeing to our terms and conditions, you agree to our terms and conditions.")
+                .setMessageColor(R.color.pdlg_color_gray)
+                .setTypeface(Typeface.createFromAsset(getResources().getAssets(),"myfont.ttf"));
 ```
